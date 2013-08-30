@@ -31,13 +31,13 @@ function set_selected_kintai_status(idx){
     }
     
     if(item_info.additem){
-        document.location.href="#popup_new_kintai_status";
+        $.mobile.changePage('#popup_new_kintai_status');
     }else if(item_info.has_time){
         kintai_status_time_title.innerHTML=item_info.label;
         init_kintai_status_time();
-        document.location.href="#page_kintai_status_time";
+        $.mobile.changePage('#page_kintai_status_time');
     }else{
-        document.location.href="#menu";
+        $.mobile.changePage('#menu');
     }
 }
 function add_kintai_status_name(){
@@ -52,7 +52,7 @@ function add_kintai_status_name(){
     ALL_KINTAI_STATU.push({label:kintai_status_name.value, available: true, editable: true, has_time: hastime});
     setStorage('kintai_status_list', ALL_KINTAI_STATU);
     
-    document.location.href="#page_kintai_status_select";
+    $.mobile.changePage('#page_kintai_status_select');
     $.mobile.showPageLoadingMsg();
     document.location.reload(true);
 }

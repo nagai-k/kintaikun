@@ -26,9 +26,9 @@ function set_selected_boss(idx){
         selected_boss_disp.innerHTML="";
     }
     if(item_info.additem){
-        document.location.href="#popup_new_boss";
+        $.mobile.changePage('#popup_new_boss');
     }else{
-        document.location.href="#menu";
+        $.mobile.changePage('#menu');
     }
 }
 function add_boss_name(){
@@ -38,7 +38,7 @@ function add_boss_name(){
     ALL_BOSS.push({label:boss_name.value, available: true, editable: true});
     setStorage('boss_list', ALL_BOSS);
     
-    document.location.href="#page_boss_select";
+    $.mobile.changePage('#page_boss_select');
     $.mobile.showPageLoadingMsg();
     document.location.reload(true);
 }

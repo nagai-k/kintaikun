@@ -30,9 +30,9 @@ function set_selected_kintai_type(idx){
         selected_kintai_type_disp.innerHTML="";
     }
     if(item_info.additem){
-        document.location.href="#popup_new_kintai_type";
+        $.mobile.changePage('#popup_new_kintai_type');
     }else{
-        document.location.href="#menu";
+        $.mobile.changePage('#menu');
     }
 }
 function add_kintai_type_name(){
@@ -42,7 +42,7 @@ function add_kintai_type_name(){
     ALL_KINTAI_TYPE.push({label:kintai_type_name.value, available: true, editable: true});
     setStorage('kintai_type_list', ALL_KINTAI_TYPE);
     
-    document.location.href="#page_kintai_type_select";
+    $.mobile.changePage('#page_kintai_type_select');
     $.mobile.showPageLoadingMsg();
     document.location.reload(true);
 }
